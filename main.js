@@ -11,11 +11,14 @@ const bod = document.querySelector('.body');
 const bodyValue = comSection.querySelector('#content');
 console.log(bodyValue)
 
+let dataArr = [];
 
 const url = `https://jsonplaceholder.typicode.com/posts`
 fetch(url)
     .then(res=>res.json())
-    .then(data=> renderPosts(data));
+    .then(data=> {
+        dataArr.push(...data)
+        renderPosts(dataArr)});
 
 function renderPosts(data) {
 
@@ -103,7 +106,6 @@ function addPost(e) {
     })
         .then(res=>res.json)
         .then(data => {
-            const dataArr = [];
             dataArr.push(data);
             renderPosts(dataArr);
         })
@@ -156,7 +158,6 @@ function mutatePost(e) {
         const parent = e.target.parentElement.parentElement.parentElement;
         let titleContent = parent.querySelector('.title').textContent;
         let bodyContent = parent.querySelector('.body').textContent;
-        
 
         titleValue.value = titleContent;
         bodyValue.value = bodyContent;
