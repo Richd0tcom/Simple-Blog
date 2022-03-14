@@ -1,32 +1,28 @@
+const postList = document.querySelector(".posts-list");
+const postForm = document.querySelector(".add-post");
+const titleValue = document.getElementById("title-value");
+const comSection = document.getElementById("add-post");
+const submitBtn = document.querySelector(".btn-submit");
 
-
-const postList = document.querySelector('.posts-list');
-const postForm =  document.querySelector('.add-post');
-const titleValue = document.getElementById('title-value');
-const comSection = document.getElementById('add-post');
-const submitBtn = document.querySelector('.btn-submit');
-const tit = postList.querySelector('.title');
-const bod = document.querySelector('.body');
-
-const bodyValue = comSection.querySelector('#content');
-console.log(tit)
+const bodyValue = comSection.querySelector("#content");
 
 let dataArr = [];
 
-const url = `https://jsonplaceholder.typicode.com/posts`
+const url = `https://jsonplaceholder.typicode.com/posts`;
 fetch(url)
-    .then(res=>res.json())
-    .then(data=> {
-        dataArr.push(...data)
-        renderPosts(dataArr)});
+  .then((res) => res.json())
+  .then((data) => {
+    dataArr.push(...data);
+    renderPosts(dataArr);
+  });
 
 function renderPosts(data) {
-
-    postList.innerHTML = data.map((postData)=>{
-        return `
+  postList.innerHTML = data
+    .map((postData) => {
+      return `
     
-            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
-                        <a href="#" class="w-full block h-full">
+            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-full md:w-80 cursor-pointer m-auto">
+                        <a href="#" class="w-full block h-full " id="read" data-index="${postData.id}">
                             <img alt="blog photo"
                                 src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
                                 class="max-h-40 w-full object-cover" />
@@ -44,9 +40,9 @@ function renderPosts(data) {
                                     ${postData.title}
                                 </p>
                                 <p class="text-gray-800 text-sm font-medium mb-2">
-                                    A comprehensive guide about online education.
+                                    POST ID #${postData.id}
                                 </p>
-                                <p class="text-gray-600 font-light text-md elli line-clamp-2 body">
+                                <p class="text-gray-600 font-light text-md elli truncate body">
                                     ${postData.body}
                                     
                                 </p>
@@ -78,120 +74,108 @@ function renderPosts(data) {
                         </a>
             </div>
     
-        `
-    }).slice(0,9).join('');
+        `;
+    })
+    .slice(0, 9)
+    .join("");
 }
-
-
 
 //create posts
 
-postForm.addEventListener('submit', addPost);
+postForm.addEventListener("submit", addPost);
 
 function addPost(e) {
-    e.preventDefault();
-    console.log(titleValue);
-
-    fetch(url,{
-        //post method header and body 
-        method:'POST',
-        body: JSON.stringify({
-            title: titleValue.value,
-            body:bodyValue.value,
-            userId:1,
-        }),
-        headers:{
-            'Content-type':'application/json; charset=UTF-8',
-        },
-    })
-        .then(res=>res.json)
-        .then(data => {
-            dataArr.push(data);
-            renderPosts(dataArr);
-        })
+  e.preventDefault();
+  fetch(url, {
+    //post method header and body
+    method: "POST",
+    body: JSON.stringify({
+      title: titleValue.value,
+      body: bodyValue.value,
+      userId: 1,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json)
+    .then((data1) => {
+      //const dArr =[];
+      //dArr.push(data1);
+      //renderPosts(dArr)
+      dataArr.push(data1);
+      renderPosts(dataArr);
+      postForm.reset();
+    });
 }
 
-function updatePosts (args){
-    tit.textContent = args.title;
-    bod.textContent = args.body;
-}
-
-postList.addEventListener('click', mutatePost);
+postList.addEventListener("click", mutatePost);
 //edit or delete posts
 function mutatePost(e) {
-    e.preventDefault();
-    let isDeleteButton = e.target.id === 'delete-post';
-    let isEditButton = e.target.id === 'edit-post';
-    
-     let postIdd = e.target.parentElement.dataset.index;
+  e.preventDefault();
+  let isDeleteButton = e.target.id === "delete-post";
+  let isEditButton = e.target.id === "edit-post";
 
+  let postIdd = e.target.parentElement.dataset.index;
 
-    //Delete
-    if(isDeleteButton){
-
-        
-                
-
-        fetch(`${url}/${postIdd}`,{
-            method:'DELETE',
-        })
-            .then(res=>res.json)
-            .then(()=>{
-
-                if(confirm('are you sure?')){
-                    //add manual deleting here
-                    const child = e.target.parentElement.parentElement.parentElement;
-                    postList.removeChild(child);
-                    console.log(child)
-                }
-                    
-
-                
-            });
-
-        
-    }
-    
-    //Edit
-    if(isEditButton){
-       
-        const parent = e.target.parentElement.parentElement.parentElement;
-        let titleContent = parent.querySelector('.title').textContent;
-        let bodyContent = parent.querySelector('.body').textContent;
-
-        titleValue.value = titleContent;
-        bodyValue.value = bodyContent;
-        window.location.href='#add-post';
-
-        
-        
-    }
-
-
-    submitBtn.addEventListener('click',(e)=>{
-        e.preventDefault
-        fetch(url,{
-            //post method header and body 
-            method:'PATCH',
-            body: JSON.stringify({
-                title: titleValue.value,
-                body:bodyValue.value,
-                userId:1,
-            }),
-            headers:{
-                'Content-type':'application/json; charset=UTF-8',
-            },
-        })
-            .then(res=>res.json)
-            .then(data=> updatePosts(data))
+  //Delete
+  if (isDeleteButton) {
+    fetch(`${url}/${postIdd}`, {
+      method: "DELETE",
     })
+      .then((res) => res.json)
+      .then(() => {
+        if (confirm("are you sure?")) {
+          //add manual deleting here
+          const child = e.target.parentElement.parentElement.parentElement;
+          postList.removeChild(child);
+          console.log(child);
+        }
+      });
+  }
 
-    //view single comments
-    if(e.target.id === 'read-more'){
-        const postId = e.target.dataset.index;
-        localStorage.setItem('postId', postId);
-        window.location.href='single-post.html';
+  //Edit
+  if (isEditButton) {
+    const parent = e.target.parentElement.parentElement.parentElement;
+    let titleContent = parent.querySelector(".title").textContent;
+    let bodyContent = parent.querySelector(".body").textContent;
+
+    const tit = postList.querySelector(".title");
+    const bod = document.querySelector(".body");
+
+    function updatePosts(args) {
+      tit.textContent = args.title;
+      bod.textContent = args.body;
+      postForm.reset();
     }
+
+    titleValue.value = titleContent;
+    bodyValue.value = bodyContent;
+    window.location.href = "#add-post";
+
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault;
+      fetch(url, {
+        //post method header and body
+        method: "PATCH",
+        body: JSON.stringify({
+          title: titleValue.value,
+          body: bodyValue.value,
+          userId: 1,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json)
+        .then((data) => updatePosts(data));
+    });
+  }
+
+  //view single comments
+  if (e.target.id === "read-more" || e.target.id == "read") {
+    const postId = e.target.dataset.index;
+    localStorage.setItem("postId", postId);
+    window.location.href = "single-post.html";
+  }
 }
-
-

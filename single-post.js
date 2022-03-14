@@ -1,20 +1,19 @@
-const commentSection = document.getElementById('comments');
-const yes = document.getElementById('yes');
+const commentSection = document.getElementById("comments");
+const yes = document.getElementById("yes");
 
-const id = localStorage.getItem('postId');
+const id = localStorage.getItem("postId");
 
-const url = `https://jsonplaceholder.typicode.com/posts/${id}/comments`
+const url = `https://jsonplaceholder.typicode.com/posts/${id}/comments`;
 fetch(url)
-    .then(res=>res.json())
-    .then(data=> renderComments(data));
+  .then((res) => res.json())
+  .then((data) => renderComments(data));
 
-
-function renderComments(args) { 
-
-    commentSection.innerHTML = args.map((comment,i)=>{
-        return `
-        <div class="px-5 pt-5 pb-5 mt-6 md:mt-12 md:pb-12 md:pt-12 md:px-9 md:py-9 test rounded-lg shadow-lg">
-          <p class="text-lg pt-1 tracking-tight leading-normal md:tracking-wide md:text-lg md:px-9 md:pt-7">${comment.body}</p>
+function renderComments(args) {
+  commentSection.innerHTML = args
+    .map((comment, i) => {
+      return `
+        <div class="px-5 pt-7 pb-5 mt-9 md:mt-12 md:pb-12 md:pt-12 md:px-9 md:py-9 test rounded-lg shadow-lg">
+          <p class="text-lg pt-3 tracking-tight leading-normal md:tracking-wide md:text-lg md:px-9 md:pt-7">${comment.body}</p>
           <div class="flex pt-3 md:px-5 md:pt-5 pb-5">
             
                 <div class="flex items-center mt-2 pb-4">
@@ -33,13 +32,12 @@ function renderComments(args) {
           </div>
         </div>
         
-        `
-    }).join('');
+        `;
+    })
+    .join("");
 
-
-    yes.innerHTML = `POST ID #${id}`;
-    
+  yes.innerHTML = `POST ID #${id}`;
 }
 
 let newId = 0;
-localStorage.setItem('postId', newId);
+localStorage.setItem("postId", newId);

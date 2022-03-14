@@ -1,147 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Blog</title>
 
     <style>
-        p .elli{
-
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 3;
-        }
+      p .elli {
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="relative w-full bg-white">
-        <div class="absolute w-full h-32 bg-gradient-to-b from-gray-100 to-white"></div>
-        <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
-
-            <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900 lg:text-5xl xl:text-6xl sm:mb-3"><a
-                    href="#_">The Project Blog</a></h1>
-            <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app</p>
-        </div>
+      <div
+        class="absolute w-full h-32 bg-gradient-to-b from-gray-100 to-white"
+      ></div>
+      <div
+        class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl"
+      >
+        <h1
+          class="mb-1 text-4xl font-extrabold leading-none text-gray-900 lg:text-5xl xl:text-6xl sm:mb-3"
+        >
+          <a href="#_">The Project Blog</a>
+        </h1>
+        <p class="text-lg font-medium text-gray-500 sm:text-2xl">
+          Designs and layouts to help you with your app
+        </p>
+      </div>
     </header>
     <section class="bg-white">
-        <div class="w-full px-5 py-6 sm:mx-0 md:mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
+      <div
+        class="w-full px-5 py-6 sm:mx-0 md:mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl"
+      >
+        <div class="flex flex-col items-center sm:px-5 md:flex-row">
+          <div class="w-full md:w-1/2">
+            <a
+              href="#_"
+              class="block transition duration-200 ease-out transform hover:scale-110"
+            >
+              <img
+                class="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
+                src="https://cdn.devdojo.com/images/may2021/cupcakes.jpg"
+              />
+            </a>
+          </div>
+          <div
+            class="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2"
+          >
+            <div
+              class="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5"
+            >
+              <div
+                class="bg-pink-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white"
+              >
+                <img src="./Images/star.svg" alt="" class="w-3.5 h-3.5 mr-1" />
 
-            <div class="flex flex-col items-center sm:px-5 md:flex-row">
-                <div class="w-full md:w-1/2">
-                    <a href="#_" class="block transition duration-200 ease-out transform hover:scale-110">
-                        <img class="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
-                            src="https://cdn.devdojo.com/images/may2021/cupcakes.jpg">
-                    </a>
-                </div>
-                <div class="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
-                    <div
-                        class="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5">
-                        <div
-                            class="bg-pink-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white">
-                            <img src="./Images/star.svg" alt="" class="w-3.5 h-3.5 mr-1">
-
-                            <span>Featured</span>
-                        </div>
-                        <h1 class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"><a href="#_">Savory
-                                Templates. Sweet Designs.</a></h1>
-                        <p class="pt-2 text-sm font-medium">by <a href="#_" class="mr-1 underline">John Doe</a> · <span
-                                class="mx-1">April 23rd, 2021</span> · <span class="mx-1 text-gray-600">5 min.
-                                read</span></p>
-                    </div>
-                </div>
+                <span>Featured</span>
+              </div>
+              <h1
+                class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"
+              >
+                <a href="#_">Savory Templates. Sweet Designs.</a>
+              </h1>
+              <p class="pt-2 text-sm font-medium">
+                by <a href="#_" class="mr-1 underline">John Doe</a> ·
+                <span class="mx-1">April 23rd, 2021</span> ·
+                <span class="mx-1 text-gray-600">5 min. read</span>
+              </p>
             </div>
-
-            <div class=" grid sm:grid-cols-1 md:grid-cols-3   pb-10 sm:px-5 md:gap-x-8 gap-y-16 posts-list">
-                <div
-                    class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
-                    <a href="#" class="w-full block h-full">
-                        <img alt="blog photo"
-                            src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
-                            class="max-h-40 w-full object-cover" />
-
-
-
-                        <div class="bg-white w-full p-4">
-
-                            <button
-                                class="bg-blue-500  px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white ">
-                                Motivation
-                            </button>
-
-                            <p class="text-indigo-500 text-2xl font-medium pt-3">
-                                Should You Get Online Education?
-                            </p>
-                            <p class="text-gray-800 text-sm font-medium mb-2">
-                                A comprehensive guide about online education.
-                            </p>
-                            <p class="text-gray-600 font-light text-md elli">
-                                It is difficult to believe that we have become so used to having instant access to
-                                information at...
-                                <a class="inline-flex text-indigo-500" href="./single-post.html" data-index="">Read More</a>
-                            </p>
-                            <div
-                                class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
-                                <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-                                    Edit
-                                </span>
-                                <span class="m-1 px-2 py-1 rounded bg-pink-400">
-                                    #internet
-                                </span>
-                                <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-                                    #education
-                                </span>
-                            </div>
-                            <div class="flex items-center mt-2 pb-4">
-                                <img class='w-10 h-10 object-cover rounded-full' alt='User avatar'
-                                    src='https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200'>
-
-                                <div class="pl-3">
-                                    <div class="font-medium">
-                                        Jean Marc
-                                    </div>
-                                    <div class="text-gray-600 text-sm">
-                                        CTO of Supercars
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-
-            </div>
+          </div>
         </div>
+
+        <div
+          class="grid sm:grid-cols-1 md:grid-cols-3 pb-10 sm:px-5 md:gap-x-8 gap-y-16 posts-list"
+        >
+          <!-- card-->
+          
+        </div>
+      </div>
     </section>
 
-    <section class="bg-white " id="add-post">
-        <div class="w-full px-5 py-6 mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
+    <section class="bg-white" id="add-post">
+      <div
+        class="w-full px-5 py-6 mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl"
+      >
+        <h2 class="text-3xl font-bold">Add new post</h2>
 
-            <h2 class="text-3xl font-bold">Add new post</h2>
+        <form action="" method="post" class="add-post">
+          <label for="title" class="text-xl mb-1 block">Title</label>
+          <input
+            type="text"
+            name="Title"
+            id="title-value"
+            class="w-full border border-gray-300 py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 mt-4"
+          />
 
-            <form action="" method="post" class="add-post">
-                <label for="title" class="text-xl mb-1 block" >Title</label>
-                <input type="text" name="Title" id="title-value"
-                    class="w-full border border-gray-300 py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 mt-4">
+          <label for="content" class="text-xl mb-3 pt-4 block">Content</label>
+          <input
+            type="text"
+            name="con"
+            id="content"
+            class="block w-full h-32 resize-none border border-gray-300 py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 mt-4"
+          />
 
-                <label for="content" class="text-xl mb-3 pt-4 block">Content</label>
-                <input type="text" name="con" id="content" class="block w-full h-32 resize-none border border-gray-300 py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 mt-4">
-
-                <input type="submit" value="Add post" class="m-1 mt-3 px-3 py-2 rounded bg-indigo-500 text-white cursor-pointer btn-submit">
-            </form>
-
-        </div>
+          <input
+            type="submit"
+            value="Add post"
+            class="m-1 mt-3 px-3 py-2 rounded bg-indigo-500 text-white cursor-pointer btn-submit"
+          />
+        </form>
+      </div>
     </section>
-
-
-   
-
 
     <script src="main.js" type="module" module></script>
-    <script src="posts.js" type="module" module></script>
-</body>
-
+  </body>
 </html>
