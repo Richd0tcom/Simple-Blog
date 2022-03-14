@@ -6,13 +6,9 @@ This is a solution to the blog question
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 
@@ -32,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live URl](https://richd0tcom.github.io/fylo-dark-theme-landing-page/)
+- Live Site URL: [Live URL](https://richd0tcom.github.io/Simple-Blog/)
 
 ## My process
 
