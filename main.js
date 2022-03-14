@@ -5,11 +5,11 @@ const postForm =  document.querySelector('.add-post');
 const titleValue = document.getElementById('title-value');
 const comSection = document.getElementById('add-post');
 const submitBtn = document.querySelector('.btn-submit');
-const tit = document.querySelector('.title');
+const tit = postList.querySelector('.title');
 const bod = document.querySelector('.body');
 
 const bodyValue = comSection.querySelector('#content');
-console.log(bodyValue)
+console.log(tit)
 
 let dataArr = [];
 
@@ -112,8 +112,8 @@ function addPost(e) {
 }
 
 function updatePosts (args){
-    tit.innerHTML = args.title;
-    bod.innerHTML = args.body;
+    tit.textContent = args.title;
+    bod.textContent = args.body;
 }
 
 postList.addEventListener('click', mutatePost);
