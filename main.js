@@ -43,7 +43,7 @@ function renderPosts(data) {
                                 <p class="text-gray-800 text-sm font-medium mb-2">
                                     A comprehensive guide about online education.
                                 </p>
-                                <p class="text-gray-600 font-light text-md elli line-clamp-3 body">
+                                <p class="text-gray-600 font-light text-md elli line-clamp-2 body">
                                     ${postData.body}
                                     
                                 </p>
@@ -53,7 +53,7 @@ function renderPosts(data) {
                                     <span class="m-1 px-2 py-1 rounded bg-indigo-500" id="edit-post">
                                         Edit
                                     </span>
-                                    <span class="m-1 px-2 py-1 rounded bg-Rose-500" id="delete-post">
+                                    <span class="m-1 px-2 py-1 rounded bg-rose-500" id="delete-post">
                                         Delete
                                     </span>
                                    
