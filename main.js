@@ -56,7 +56,7 @@ function renderPosts(data) {
                                     <span class="m-1 px-2 py-1 rounded bg-indigo-500" id="edit-post">
                                         Edit
                                     </span>
-                                    <span class="m-1 px-2 py-1 rounded bg-rose-500" id="delete-post">
+                                    <span class="m-1 px-2 py-1 rounded bg-pink-500" id="delete-post">
                                         Delete
                                     </span>
                                    

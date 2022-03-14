@@ -13,14 +13,23 @@ function renderComments(args) {
 
     commentSection.innerHTML = args.map((comment,i)=>{
         return `
-        <div class="px-5 pt-5 pb-5 mt-6 md:mt-12 md:pb-12 md:pt-12 test rounded-lg shadow-lg">
-          <p class="text-lg pt-1 tracking-tight leading-normal md:tracking-wide md:text-lg md:px-4 md:pt-7">${comment.body}</p>
+        <div class="px-5 pt-5 pb-5 mt-6 md:mt-12 md:pb-12 md:pt-12 md:px-9 md:py-9 test rounded-lg shadow-lg">
+          <p class="text-lg pt-1 tracking-tight leading-normal md:tracking-wide md:text-lg md:px-9 md:pt-7">${comment.body}</p>
           <div class="flex pt-3 md:px-5 md:pt-5 pb-5">
             <div class=" self-center pt-1 "><img class="w-6 h-6 rounded-full md:w-8 md:h-8" src="./Images/profile-2.jpg"
                 alt="commenter"></div>
-            <div class="md:ml-3">
-              <h4 class="text-lg pl-2 font-bold md:text-md md:tracking-wider">${comment.name}</h4>
-              <p class="text-md pl-2 tracking-tight md:tracking-wide md:pt-2">${comment.email}</p>
+                <div class="flex items-center mt-2 pb-4">
+                <img class='w-10 h-10 object-cover rounded-full' alt='User avatar'
+                    src='./Images/profile-2.jpg'>
+
+                <div class="pl-3">
+                    <div class="font-medium">
+                        ${comment.name}
+                    </div>
+                    <div class="text-gray-600 text-sm">
+                        ${comment.email}
+                    </div>
+                </div>
             </div>
           </div>
         </div>
